@@ -1,7 +1,7 @@
 # CSGO-crosshair-placement-analysis
 This is a repo of csgo crosshair placement (or misplacement) analysis using yolov7's object detection.
 
-<center><img src="img/out.gif"></center>
+![iR3tM7.th.gif](https://iili.io/iR3tM7.th.gif)
 
 ## Prerequisite
 You will need to make a conda environment and install the packages in `requirements.txt`. 
