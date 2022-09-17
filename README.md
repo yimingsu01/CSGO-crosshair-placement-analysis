@@ -1,6 +1,8 @@
 # CSGO-crosshair-placement-analysis
 This is a repo of csgo crosshair placement (or replacement) analysis using yolov7's object detection.
 
+![iR3tM7.th.gif](https://iili.io/iR3tM7.th.gif)
+
 ## Prerequisite
 You will need to make a conda environment and install the packages in `requirements.txt`. 
 Notice that `requirements.txt` is not made for `pip`, but conda. Inside the txt file there are instructions to how to install it with conda.
