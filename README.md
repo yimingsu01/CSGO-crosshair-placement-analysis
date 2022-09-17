@@ -1,4 +1,4 @@
-# CSGO-crosshair-placement-analysis
+# CSGO crosshair placement analysis with yolov7
 This is a repo of csgo crosshair placement (or misplacement) analysis using yolov7's object detection.
 
 ![gif](img/out.gif)
