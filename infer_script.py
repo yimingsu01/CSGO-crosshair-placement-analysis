@@ -105,18 +105,25 @@ def OutputToVideo(output_path, filename):
     clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(imgs, fps=25)
     clip.write_videofile(f"{filename}_result.mp4")
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--video', type=str, default='test4.mp4', help='video path')
+    parser.add_argument('--video', type=str, help='video path')
+    parser.add_argument('--weights', type=str, help='weight path')
+    parser.add_argument('--label', type=str, help='labels path')
+    parser.add_argument('--frame', type=str, help='frame path')
+    parser.add_argument('--annotated', type=str, help='path to image annotated')
+
+
     arg = parser.parse_args()
     video_filename = arg.video
     video_name = video_filename.split(".")[0]
 
-    command = f"python detect.py --weights epoch_099.pt --conf 0.6 --source {video_filename} --save-conf --save-txt" \
+    command = f"python detect.py --weights {arg.weights} --conf 0.6 --source {video_filename} --save-conf --save-txt" \
               f" --name {video_name}"
 
     os.system(command)
 
-    Visualize(f"runs/detect/{video_name}/labels/", "bbox_save/", "script_out/", video_name)
-    OutputToGif("script_out/", video_name)
-    OutputToVideo("script_out/", video_name)
+    Visualize(arg.label, arg.frame, arg.annotated, video_name)
+    OutputToGif(arg.annotated, video_name)
+    OutputToVideo(arg.annotated, video_name)
